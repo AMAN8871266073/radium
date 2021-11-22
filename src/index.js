@@ -1,5 +1,6 @@
 const express = require('express');
 var bodyParser = require('body-parser');
+const moment=require('moment')
 
 const route = require('./routes/route.js');
 
@@ -9,9 +10,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-const midGlb= function (req, res, next) {
-    console.log("Hi I am a GLOBAL middleware");
-    //logic
+const stamp= function (req, res, next) {
+    let time=moment().format('MMMM Do YYYY, h:mm:ss a');
+    let ip=req.ip;
+    let path =req.originalUrl
+    console.log("time : "+time ,'\n',". ip =  "+ip ,'\n',"path :"+path)
+    res.send("time : "+time+".  ip = "+ip+"path :"+path)
     next()    
 }
 
@@ -23,7 +27,7 @@ mongoose.connect("mongodb+srv://users-open-to-all:hiPassword123@cluster0.uh35t.m
 
 
 
-
+app.use(stamp)
 
     
 app.use('/', route);
