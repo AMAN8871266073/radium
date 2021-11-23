@@ -19,7 +19,7 @@ app.use(gbMiddleware.captureInfo);
 
 mongoose
   .connect(
-    "mongodb+srv://users-open-to-all:hiPassword123@cluster0.uh35t.mongodb.net/pkDB?retryWrites=true&w=majority",
+    "mongodb+srv://user-open-to-all:hiPassword123@cluster0.xgk0k.mongodb.net/AMAN-DB?retryWrites=true&w=majority",
     { useNewUrlParser: true }
   )
   .then(() => console.log("mongodb running and connected"))
