@@ -36,10 +36,10 @@ else{
     }
     let orderCreated=await ordermodel.create(orderDetails)
     console.log(orderCreated)
-    res.send(orderCreated)
+    //res.send(orderCreated)
     if(!appTypeFree){
         await usermodel.findOneAndUpdate({_id:userId},{balance:user.balance-product.price})
-        res.send({message:"order created successfully"})
+        res.send({"orderBooked":orderCreated})
 
     }
 }
