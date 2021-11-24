@@ -5,6 +5,6 @@ const userSchema=new mongoose.Schema({
     address:String,
     age: Number,
      gender: {type:String,enum:['male','female','others'] },                             // Allowed values are - “male”, “female”, “other”
-    freeAppUser:{type:Boolean,default:false}
+    isfreeAppUser:{type:Boolean,default:false}
 },{timestamps:true})
 module.exports=mongoose.model('user',userSchema)

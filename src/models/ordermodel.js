@@ -3,7 +3,7 @@ const orderSchema=new  mongoose.Schema({
 userId: String,
 productId: String,
 amount: Number,
-isFreeAppUser: true, 
+isFreeAppUser:{type:Boolean,default:false}, 
 date:Date
 
 },{timestamps:true})
