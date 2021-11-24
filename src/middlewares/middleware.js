@@ -5,14 +5,14 @@ const headerValidation = function (req, res, next) {
     if(acceptHeaderValue)
      {
     console.log('validation done succesfully')
-    if(acceptHeaderValue===false){
+    if(acceptHeaderValue==='false'){
         isFreeApp=false
     }
     else{
         isFreeApp=true
     }
     req.isFreeAppUser=isFreeApp
-    console.log(isFreeAppUser)
+    console.log(req.isFreeAppUser)
      next()
      }
      else
